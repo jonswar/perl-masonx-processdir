@@ -39,7 +39,7 @@ __END__
 
 =head1 NAME
 
-MasonX::ProcessDir - Process a directory of Mason templates
+MasonX::ProcessDir - Process a directory of Mason 2 templates
 
 =head1 SYNOPSIS
 
@@ -62,8 +62,8 @@ MasonX::ProcessDir - Process a directory of Mason templates
 
 =head1 DESCRIPTION
 
-Recursively processes a directory of Mason templates, generating a set of
-result files in the same directory or in a parallel directory.
+Recursively processes a directory of L<Mason 2|Mason> templates, generating a
+set of result files in the same directory or in a parallel directory.
 
 Every file with suffix ".mc" will be processed, and the results placed in a
 file of the same name without the suffix. ".mi", autobase and dhandler files
@@ -73,9 +73,9 @@ themselves.
 For example, if the source directory contains
 
    Base.mc
-   foo.mc
-   bar.mc
-   baz.mi
+   foo.conf.mc
+   baz.conf.mc
+   blah.mi
    somefile.txt
 
 and we run
@@ -88,15 +88,16 @@ and we run
 
 then afterwards the destination directory will contain files
 
-    foo
-    bar
+    foo.conf
+    baz.conf
     somefile.txt
 
 where I<foo> and I<bar> are the results of processing I<foo.mc> and I<bar.mc>
 through Mason. I<Base.mc> and I<baz.mi> may be used when generating the files
 but won't generate result files themselves.
 
-This class is a convenience extension of L<Any::Template::ProcessDir>.
+This class is a convenience extension of
+L<Any::Template::ProcessDir|Any::Template::ProcessDir>.
 
 =head1 CONSTRUCTOR
 
