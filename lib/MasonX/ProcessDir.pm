@@ -73,8 +73,9 @@ themselves.
 For example, if the source directory contains
 
    Base.mc
-   foo.conf.mc
-   baz.conf.mc
+   httpd.conf.mc
+   proxy.conf.mc
+   etc/crontab.mc
    blah.mi
    somefile.txt
 
@@ -88,12 +89,13 @@ and we run
 
 then afterwards the destination directory will contain files
 
-    foo.conf
-    baz.conf
+    httpd.conf
+    proxy.conf
+    etc/crontab
     somefile.txt
 
 where I<foo> and I<bar> are the results of processing I<foo.mc> and I<bar.mc>
-through Mason. I<Base.mc> and I<baz.mi> may be used when generating the files
+through Mason. I<Base.mc> and I<blah.mi> may be used during Mason processing
 but won't generate result files themselves.
 
 This class is a convenience extension of
