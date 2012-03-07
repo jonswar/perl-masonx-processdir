@@ -1,5 +1,4 @@
 #!perl
-use d;
 use MasonX::ProcessDir;
 use Cwd qw(realpath);
 use File::Basename;
